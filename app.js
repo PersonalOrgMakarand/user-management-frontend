@@ -236,8 +236,17 @@ function resetForm() {
     userIdInput.value = '';
     isEditMode = false;
     formTitle.textContent = 'Add New User';
-    submitBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">➕</span>Add User';
+    setButtonLabelWithIcon(submitBtn, '➕', 'Add User');
     cancelBtn.style.display = 'none';
+}
+
+function setButtonLabelWithIcon(button, icon, label) {
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'btn-icon';
+    iconSpan.setAttribute('aria-hidden', 'true');
+    iconSpan.textContent = icon;
+
+    button.replaceChildren(iconSpan, document.createTextNode(label));
 }
 
 // Edit User
@@ -263,7 +272,7 @@ async function editUser(id) {
         // Update form state
         isEditMode = true;
         formTitle.textContent = 'Edit User';
-        submitBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">💾</span>Update User';
+        setButtonLabelWithIcon(submitBtn, '💾', 'Update User');
         cancelBtn.style.display = 'inline-block';
 
         // Scroll to form
