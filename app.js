@@ -237,12 +237,24 @@ function handleFormSubmit(e) {
     }
 }
 
+function setButtonContent(button, icon, label) {
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'btn-icon';
+    iconSpan.setAttribute('aria-hidden', 'true');
+    iconSpan.textContent = icon;
+
+    const labelSpan = document.createElement('span');
+    labelSpan.textContent = label;
+
+    button.replaceChildren(iconSpan, labelSpan);
+}
+
 function resetForm() {
     userForm.reset();
     userIdInput.value = '';
     isEditMode = false;
     formTitle.textContent = 'Add New User';
-    submitBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">➕</span><span>Add User</span>';
+    setButtonContent(submitBtn, '➕', 'Add User');
     cancelBtn.style.display = 'none';
 }
 
@@ -269,7 +281,7 @@ async function editUser(id) {
         // Update form state
         isEditMode = true;
         formTitle.textContent = 'Edit User';
-        submitBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">💾</span><span>Update User</span>';
+        setButtonContent(submitBtn, '💾', 'Update User');
         cancelBtn.style.display = 'inline-block';
 
         // Scroll to form
