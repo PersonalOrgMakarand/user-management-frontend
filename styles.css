@@ -1,7 +1,7 @@
 :root {
     --brand-primary: #1f4e79;
     --brand-secondary: #2f6f9f;
-    --brand-accent: var(--brand-primary);
+    --brand-accent: #2a5f8a;
 }
 
 /* Reset and Base Styles */
