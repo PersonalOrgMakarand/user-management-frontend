@@ -246,7 +246,7 @@ function setButtonLabelWithIcon(button, icon, label) {
     iconSpan.setAttribute('aria-hidden', 'true');
     iconSpan.textContent = icon;
 
-    button.replaceChildren(iconSpan, document.createTextNode(label));
+    button.replaceChildren(iconSpan, document.createTextNode(` ${label}`));
 }
 
 // Edit User
