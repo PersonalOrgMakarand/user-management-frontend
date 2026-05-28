@@ -1,6 +1,13 @@
 // API Base URL
 const API_BASE_URL = 'https://user-management-accenture.azurewebsites.net';
 
+// Auth Guard – redirect to login if not authenticated.
+// Note: This is a client-side check for educational purposes. In a production
+// application, access control must be enforced server-side on every API request.
+if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+    window.location.href = 'login.html';
+}
+
 // DOM Elements
 const userForm = document.getElementById('user-form');
 const usersTbody = document.getElementById('users-tbody');
@@ -28,6 +35,23 @@ let deleteUserId = null;
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
+    // Show logged-in username
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    const loggedInUserSpan = document.getElementById('logged-in-user');
+    if (loggedInUser && loggedInUserSpan) {
+        loggedInUserSpan.textContent = `👤 ${loggedInUser}`;
+    }
+
+    // Logout button
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            sessionStorage.removeItem('isLoggedIn');
+            sessionStorage.removeItem('loggedInUser');
+            window.location.href = 'login.html';
+        });
+    }
+
     loadUsers();
     setupEventListeners();
 });
