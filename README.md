@@ -146,7 +146,7 @@ const API_BASE_URL = 'your-api-url-here';
 
 ### Styling
 All styles are in `styles.css`. Key variables to customize:
-- Color scheme (purple gradient by default)
+- Color scheme (professional blue-gray palette by default)
 - Button colors
 - Table styling
 - Form layout
