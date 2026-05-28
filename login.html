@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – User Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="login-page">
+    <div class="login-card">
+        <div class="login-header">
+            <h1>User Management System</h1>
+            <p class="subtitle">Sign in to continue</p>
+        </div>
+
+        <form id="login-form" novalidate>
+            <div id="login-error" class="error-message" style="display: none;"></div>
+
+            <div class="form-group">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" required placeholder="Enter username" autocomplete="username">
+            </div>
+
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required placeholder="Enter password" autocomplete="current-password">
+            </div>
+
+            <button type="submit" id="login-btn" class="btn btn-primary login-btn">
+                <span class="btn-icon" aria-hidden="true">🔐</span>Sign In
+            </button>
+        </form>
+
+        <p class="login-hint">Demo credentials: <strong>admin</strong> / <strong>admin123</strong></p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

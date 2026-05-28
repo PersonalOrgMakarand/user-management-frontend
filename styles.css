@@ -327,6 +327,77 @@ td {
     font-size: 16px;
 }
 
+/* Login Page */
+body.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+}
+
+.login-header {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-header h1 {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+}
+
+.login-card form {
+    padding: 30px 30px 10px;
+}
+
+.login-card .form-group {
+    margin-bottom: 18px;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.login-hint {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    padding: 16px 30px 24px;
+}
+
+/* Logout button in header */
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.btn-logout {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 6px 16px;
+    font-size: 13px;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .form-row {
