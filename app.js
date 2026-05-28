@@ -191,8 +191,8 @@ function displayUsers(users) {
             <td>${escapeHtml(user.lastName || '')}</td>
             <td>
                 <div class="action-buttons">
-                    <button class="btn btn-warning btn-small" onclick="editUser(${user.id})">Edit</button>
-                    <button class="btn btn-danger btn-small" onclick="showDeleteModal(${user.id})">Delete</button>
+                    <button class="btn btn-warning btn-small" onclick="editUser(${user.id})"><span class="btn-icon" aria-hidden="true">✏️</span>Edit</button>
+                    <button class="btn btn-danger btn-small" onclick="showDeleteModal(${user.id})"><span class="btn-icon" aria-hidden="true">🗑️</span>Delete</button>
                 </div>
             </td>
         `;
@@ -236,7 +236,7 @@ function resetForm() {
     userIdInput.value = '';
     isEditMode = false;
     formTitle.textContent = 'Add New User';
-    submitBtn.textContent = 'Add User';
+    submitBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">➕</span>Add User';
     cancelBtn.style.display = 'none';
 }
 
@@ -263,7 +263,7 @@ async function editUser(id) {
         // Update form state
         isEditMode = true;
         formTitle.textContent = 'Edit User';
-        submitBtn.textContent = 'Update User';
+        submitBtn.innerHTML = '<span class="btn-icon" aria-hidden="true">💾</span>Update User';
         cancelBtn.style.display = 'inline-block';
 
         // Scroll to form
