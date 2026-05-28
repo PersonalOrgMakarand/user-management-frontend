@@ -26,6 +26,11 @@ const lastNameInput = document.getElementById('lastName');
 let isEditMode = false;
 let deleteUserId = null;
 
+const BUTTON_LABELS = {
+    add: '<span class="btn-icon" aria-hidden="true">➕</span><span>Add User</span>',
+    update: '<span class="btn-icon" aria-hidden="true">💾</span><span>Update User</span>'
+};
+
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
     loadUsers();
@@ -191,8 +196,8 @@ function displayUsers(users) {
             <td>${escapeHtml(user.lastName || '')}</td>
             <td>
                 <div class="action-buttons">
-                    <button class="btn btn-warning btn-small" onclick="editUser(${user.id})">Edit</button>
-                    <button class="btn btn-danger btn-small" onclick="showDeleteModal(${user.id})">Delete</button>
+                    <button class="btn btn-warning btn-small" onclick="editUser(${user.id})"><span class="btn-icon" aria-hidden="true">✏</span><span>Edit</span></button>
+                    <button class="btn btn-danger btn-small" onclick="showDeleteModal(${user.id})"><span class="btn-icon" aria-hidden="true">🗑</span><span>Delete</span></button>
                 </div>
             </td>
         `;
@@ -236,7 +241,7 @@ function resetForm() {
     userIdInput.value = '';
     isEditMode = false;
     formTitle.textContent = 'Add New User';
-    submitBtn.textContent = 'Add User';
+    submitBtn.innerHTML = BUTTON_LABELS.add;
     cancelBtn.style.display = 'none';
 }
 
@@ -263,7 +268,7 @@ async function editUser(id) {
         // Update form state
         isEditMode = true;
         formTitle.textContent = 'Edit User';
-        submitBtn.textContent = 'Update User';
+        submitBtn.innerHTML = BUTTON_LABELS.update;
         cancelBtn.style.display = 'inline-block';
 
         // Scroll to form

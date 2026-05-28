@@ -106,6 +106,10 @@ header h1 {
     font-weight: bold;
     transition: all 0.3s;
     text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
 
 .btn:hover {
@@ -146,6 +150,10 @@ header h1 {
 .btn-small {
     padding: 6px 12px;
     font-size: 12px;
+}
+
+.btn-icon {
+    line-height: 1;
 }
 
 /* Table Section */
