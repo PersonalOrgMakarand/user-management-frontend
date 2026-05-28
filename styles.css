@@ -98,6 +98,10 @@ header h1 {
 
 /* Button Styles */
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     padding: 12px 24px;
     border: none;
     border-radius: 5px;
@@ -106,6 +110,11 @@ header h1 {
     font-weight: bold;
     transition: all 0.3s;
     text-transform: uppercase;
+}
+
+.btn-icon {
+    font-size: 1em;
+    line-height: 1;
 }
 
 .btn:hover {
